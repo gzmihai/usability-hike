@@ -1,0 +1,21 @@
+{
+  "name": "usabilityhike",
+  "description": "usabilityhike description extension",
+  "main": "dist/js/main.js",
+  "scripts": {
+    "start": "node dist/js/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mihai Buricea",
+  "license": "UNLICENSED",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.24.6",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "rollup": "^1.0.2"
+  }
+}

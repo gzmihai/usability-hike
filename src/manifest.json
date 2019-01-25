@@ -1,0 +1,38 @@
+{
+    "name": "Usability Hike: Find usability problems",
+    "short_name": "Hike",
+    "version": "1.0.3",
+    "description": "Test website against common usability problems that make pages hard to use.",
+    "permissions": [
+        "background",
+        "activeTab",
+        "tabs",
+        "https://validator.w3.org/nu/*",
+        "storage",
+        "unlimitedStorage"
+    ],
+
+    "background": {
+        "scripts": [
+            "js/background/main.js"
+        ]
+    },
+
+    "browser_action": {
+        "default_icon": {
+            "16": "img/icon16.png",
+            "32": "img/icon32.png",
+            "48": "img/icon48.png",
+            "128": "img/icon128.png"
+        },
+        "default_title": "Usability Hike"
+    },
+    "icons": {
+        "16": "img/icon16.png",
+        "32": "img/icon32.png",
+        "48": "img/icon48.png",
+        "128": "img/icon128.png"
+    },
+
+    "manifest_version": 2
+}
