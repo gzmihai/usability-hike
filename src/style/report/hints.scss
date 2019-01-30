@@ -1,0 +1,138 @@
+.hint {
+    background-color: #fff;
+    border: 1px solid #eff0f2;
+    margin: 8px 15px;
+    box-shadow: 0 0 2px 0px #f3f3f3;
+    border-radius: 4px;
+
+    &--open {
+        .hint-body {
+            display: block;
+        }
+    }
+}
+
+.hint-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 7px 12px;
+
+    * {
+        pointer-events: none;
+    }
+}
+
+.hint-body {
+    display: none;
+    padding: 0 12px 8px;
+}
+
+.hint-title {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.hint-result {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 3px;
+    align-items: center;
+
+    &-loading {
+        svg {
+            fill: #1139e4;
+        }
+    }
+
+    &-error {
+        color: #ff8c00;
+
+        svg {
+            fill: #ff8c00;
+        }
+    }
+
+    &-success {
+        svg {
+            fill: #1ece1e;
+        }
+    }
+}
+
+.hint-desc {
+    code {
+        background: #e4e4e4;
+        padding: 2px 3px;
+    }
+}
+
+.hint-resources {
+    margin-top: 15px;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    grid-gap: 4px;
+    align-items: center;
+    font-size: 14px;
+
+    svg {
+        fill: #444;
+    }
+}
+
+.hint-code {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    margin: 10px 0;
+
+    code {
+        padding: 5px;
+        white-space: pre-wrap;
+        word-break: break-all;
+        font-size: 12px;
+
+        * {
+            font-size: 12px;
+        }
+    }
+
+    &-goto {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            opacity: .8;
+        }
+
+        svg {
+            fill: #444444;
+        }
+
+        * {
+            pointer-events: none;
+        }
+    }
+}
+
+.report-audit {
+    font-size: 12px;
+    margin-top: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 5px;
+    margin-left: -5px;
+
+
+    svg {
+        fill: #62a8ea;
+        margin-right: 2px;
+        margin-top: 1px;
+    }
+}

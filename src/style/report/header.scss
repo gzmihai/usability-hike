@@ -1,0 +1,63 @@
+.header {
+    display: grid;
+    grid-template: 1fr / 1fr;
+    grid-gap: 3px;
+    place-content: center;
+    place-items: center;
+
+    a {
+        display: grid;
+        text-align: right;
+        text-decoration: none;
+        color: #444;
+        grid-column: 1;
+        grid-row: 1;
+        margin: 10px 0;
+
+        svg {
+            pointer-events: none;
+            fill: #444;
+        }
+    }
+
+    &-logo {
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+    }
+
+    &-by-ulmo {
+        font-size: 11px;
+        line-height: 1;
+    }
+
+    &-controls {
+        grid-column: 1;
+        grid-row: 1;
+        display: flex;
+        justify-self: end;
+        align-self: start;
+    }
+
+    &-close,
+    &-toggle {
+        cursor: pointer;
+        display: flex;
+        padding: 4px;
+        background: #f6f7fb;
+
+        svg {
+            pointer-events: none;
+            fill: #444;
+        }
+    }
+
+    &-close {
+        transform: translate(100%, 0);
+        margin-right: 5px;
+    }
+
+    &-toggle {
+        transform: translate(200%, 100%) rotate(180deg);
+    }
+}

@@ -1,0 +1,28 @@
+.try-ulmo {
+    display: grid;
+    place-content: center;
+    place-items: center;
+    grid-gap: 10px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    a {
+        font-size: 16px;
+        padding: 10px 30px;
+        font-weight: 500;
+        letter-spacing: 0.4px;
+        border: 1px solid #3c8fde;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        background-color: #3c8fde;
+        color: #fff;
+
+        &:hover {
+            text-decoration: none;
+            opacity: .9;
+            color: #fff;
+        }
+    }
+}

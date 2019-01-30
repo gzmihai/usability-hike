@@ -3,6 +3,7 @@ async function fetchURL({ url = '', options = {}, body = null }) {
         const response = await fetch(url, options);
 
         return {
+            url,
             status: response.status,
             ...(body && { body: await response[body]() }),
         }
@@ -10,6 +11,7 @@ async function fetchURL({ url = '', options = {}, body = null }) {
         console.log(`Usability Hike: fetchURL error for ${url}`, error);
 
         return {
+            url,
             error: error.message,
         }
     }

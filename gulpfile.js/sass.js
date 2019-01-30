@@ -5,18 +5,18 @@ const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 
 function clean() {
-    return del(['dev/style/result/']);
+    return del(['dev/style/report/']);
 }
 
 function runSass() {
-    return src('src/style/result/main.scss')
+    return src('src/style/report/main.scss')
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({ browsers: ['last 3 version'] }))
         .pipe(sourcemaps.write())
-        .pipe(dest('dev/style/result/'));
+        .pipe(dest('dev/style/report/'));
 }
 
 module.exports = {
-    sassResultDev: series(clean, runSass),
+    sassReportDev: series(clean, runSass),
 }

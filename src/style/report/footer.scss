@@ -1,0 +1,49 @@
+.footer {
+    display: grid;
+    grid-gap: 4px;
+    padding: 10px 15px;
+    place-content: center;
+
+    &-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        a {
+            display: flex;
+        }
+    }
+
+    &-send-feedback {
+        margin-right: 15px;
+    }
+
+    &-social-twitter {
+        margin-left: auto;
+    }
+
+    &-social-fb,
+    &-social-linkedin {
+        margin-left: 3px;
+    }
+
+    &-social-twitter svg {
+        fill: #38A1F3;
+    }
+
+    &-social-fb svg {
+        fill: #4267b2;
+    }
+
+    &-social-linkedin svg {
+        fill: #0077B5;
+    }
+
+    &-social-twitter,
+    &-social-fb,
+    &-social-linkedin {
+        &:hover {
+            opacity: .9;
+        }
+    }
+}

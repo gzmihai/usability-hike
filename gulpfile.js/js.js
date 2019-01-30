@@ -24,6 +24,5 @@ async function runRollup(path) {
 
 module.exports = {
     jsBackgroundDev: series(cleanDev.bind(null, 'background'), runRollup.bind(null, 'background')),
-    jsContentScriptDev: series(cleanDev.bind(null, 'content-script'), runRollup.bind(null, 'content-script')),
-    jsResultDev: series(cleanDev.bind(null, 'result'), runRollup.bind(null, 'result')),
+    jsReportDev: series(cleanDev.bind(null, 'report'), runRollup.bind(null, 'report')),
 }

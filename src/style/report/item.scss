@@ -1,0 +1,25 @@
+.hints {
+    &-item {
+        position: absolute;
+        border: 3px solid #ef2323;
+        z-index: 2147483647;
+        pointer-events: none;
+
+        &--flash {
+            animation: keyframes-flash .8s ease-in-out infinite;
+        }
+    }
+}
+
+@keyframes keyframes-flash {
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0;
+    }
+}

@@ -1,54 +1,36 @@
 import { fetchURL } from './util';
-import {
-    removeTab,
-    availableTab,
-} from './tab-has-extension';
 
-chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-    if (request.cmd == 'fetchURL') {
-        fetchURL(request).then(sendResponse);
+// @todo - make it persistent: false in manifest.json
 
-        return true;
-    } else if (request.cmd == 'openResult') {
-        const { url, timestamp, values } = request;
+chrome.runtime.onConnect.addListener(port => {
+    if (port.name === 'fetch') {
+        let portActive = true;
 
-        chrome.storage.local.get(url, function (result) {
-            if (!result[url]) {
-                result[url] = {};
-            }
+        port.onMessage.addListener(request => {
+            fetchURL(request).then(response => {
+                if (!portActive) {
+                    return;
+                }
 
-            result[url][timestamp] = Object.assign({}, ...values);
-
-            chrome.storage.local.set(result, () => {
-                sendResponse();
-
-                removeTab(sender.tab.id)
-
-                chrome.tabs.create({
-                    url: `result.html?url=${btoa(encodeURI(url))}&timestamp=${timestamp}`,
-                });
+                port.postMessage(response);
             });
         });
 
-        return true;
+        port.onDisconnect.addListener(() => portActive = false);
     }
 });
 
-chrome.browserAction.onClicked.addListener(function (e) {
+chrome.browserAction.onClicked.addListener(() => {
     chrome.tabs.query({
         active: true,
         currentWindow: true,
-    }, function (tabs) {
+    }, tabs => {
         const tabId = tabs[0].id;
 
-        if (availableTab(tabId)) {
-            try {
-                chrome.tabs.executeScript(tabId, {
-                    file: 'js/content-script/main.js'
-                });
-            } catch (error) {
-                console.log(error);
+        chrome.tabs.sendMessage(tabId, { cmd: 'tabActive' }, isActive => {
+            if (!isActive) {
+                chrome.tabs.executeScript(tabId, { file: 'js/report/main.js' });
             }
-        }
+        });
     });
 });
