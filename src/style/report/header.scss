@@ -10,13 +10,16 @@
         text-align: right;
         text-decoration: none;
         color: #444;
+        font-weight: 500;
         grid-column: 1;
         grid-row: 1;
         margin: 10px 0;
 
         svg {
             pointer-events: none;
-            fill: #444;
+            fill: #636363;
+            margin-top: 6px;
+            margin-right: 3px;
         }
     }
 
@@ -48,7 +51,7 @@
 
         svg {
             pointer-events: none;
-            fill: #444;
+            fill: #636363;
         }
     }
 
