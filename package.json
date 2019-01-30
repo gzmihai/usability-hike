@@ -10,7 +10,6 @@
   "license": "UNLICENSED",
   "dependencies": {},
   "devDependencies": {
-    "browser-sync": "^2.24.6",
     "del": "^3.0.0",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
